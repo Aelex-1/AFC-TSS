@@ -1,0 +1,300 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Coiny&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"); */
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Coiny";
+  src: url("/fonts/coiny-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #AC1E1D;
+  --color-primary-hover: #8A1817;
+  --color-secondary: #f2470c;
+  --color-secondary-hover: #f35521;
+  --color-accent: #FCF239;
+  --color-chart-2: #ffad9e;
+
+  --color-background: #fdfdfd;
+  --color-header: rgba(255, 255, 255, 0.8);
+  --color-footer: #1a1a1e;
+  --color-footer-border: #9a9a9a;
+  --color-surface: #FFFFFF;
+  --color-muted: #F5EDE6;
+  --color-border: #e5e7eb;
+
+  --color-text: #080808;
+  --color-text-muted: #6B5D58;
+
+  --color-shadow: rgba(172, 30, 29, 0.15);
+
+  --shadow-sm: 0px 4px 8px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+}
+
+.page-wrap {
+  width: min(1152px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.page-wrap-red {
+  background-color: var(--color-primary);
+}
+
+.page-wrap-red div {
+  width: min(1152px, calc(100% - 2rem));
+  margin-inline: auto;
+  color: white;
+}
+
+.page-wrap-red .split-content {
+  color: white;
+}
+
+.afc-title {
+  font-family: "Coiny", system-ui, sans-serif;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--color-primary);
+  transition: transform 170ms ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--color-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.footer-link {
+  color: #FFFFFF;
+}
+
+
+.home-slider .swiper-button-prev,
+.home-slider .swiper-button-next {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  --swiper-navigation-size: 1.5rem;
+  --swiper-navigation-sides-offset: 0.25rem;
+  --swiper-navigation-color: #ffffff;
+}
+
+.home-slider .swiper-pagination-bullet {
+  --swiper-pagination-color: var(--color-secondary);
+}
+
+.node-circle {
+  transition: border-color 0.5s ease;
+}
+
+.node-card {
+  transition: border-color 0.5s ease, opacity 0.5s ease;
+}
+
+.node.node-show .node-circle {
+  background-color: var(--color-primary);
+}
+
+.node.node-show .node-card {
+  border-color: var(--color-primary);
+}
+
+@layer base {
+  html {
+    font-size: 100%;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  h3 {
+    font-size: clamp(1.375rem, 1.2rem + 0.875vw, 1.875rem);
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.375rem);
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    line-height: 1.6;
+  }
+
+  small {
+    font-size: clamp(0.8125rem, 0.8rem + 0.0625vw, 0.875rem);
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full text-white bg-(--color-secondary) hover:bg-(--color-secondary-hover)
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full text-black bg-white border border-(--color-border) shadow-(--shadow-sm) hover:bg-[#fff4f2] hover:text-(--color-secondary)
+  }
+
+  .split-section {
+    @apply flex flex-col gap-x-10 gap-y-6 py-8 md:grid md:grid-cols-[5fr_7fr] md:items-center md:gap-x-12;
+  }
+
+  .split-media {
+    @apply w-full;
+  }
+
+  .split-media img {
+    @apply mx-auto w-full max-w-md object-contain md:mx-0 md:max-w-none;
+  }
+
+  .split-content {
+    @apply flex flex-col justify-center gap-y-4 text-center md:gap-y-6 md:text-left;
+  }
+
+  .split-section--flip .split-media {
+    @apply md:order-2;
+  }
+
+  .split-section--flip .split-content {
+    @apply md:order-1;
+  }
+
+  .node {
+    @apply opacity-0 transition-opacity
+  }
+
+  .node-show, .node-retain {
+    @apply opacity-100
+  }
+
+  .dropdown {
+    @apply relative
+  }
+
+  .dropdown-button {
+    @apply flex items-center w-fit pl-4 pr-2 py-2 bg-white border border-(--color-border) rounded-lg shadow-(--shadow-sm) cursor-pointer
+  }
+
+  .dropdown-open {
+    @apply border-(--color-secondary)
+  }
+
+  .dropdown-content {
+    @apply hidden absolute min-w-fit flex-col items-center p-4 mt-2 bg-white border border-(--color-border) rounded-lg shadow-(--shadow-sm) max-h-[40vh] overflow-y-auto scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-400 opacity-0 translate-y-[-2%] transition-[transform,opacity] ease-in-out duration-300
+  }
+
+  .dropdown-content-open {
+    @apply flex opacity-100 translate-y-[0%]
+  }
+
+  .dropdown-item {
+    @apply w-full px-4 py-2 text-left cursor-pointer hover:bg-gray-200 rounded-lg
+  }
+
+  .policy-page .policy-section {
+    @apply flex flex-col gap-y-2
+  }
+
+  .policy-page a {
+    @apply text-(--color-primary) hover:text-(--color-primary-hover) underline
+  }
+
+  .policy-page :is(ol, li, p) {
+    @apply text-gray-800
+  }
+
+  .policy-page :is(ol, ul) {
+    @apply text-gray-800 list-disc list-inside pl-2
+  }
+
+  .policy-page strong {
+    @apply text-(--color-primary) font-bold
+  }
+
+  .franchise-active-node{
+    @apply bg-(--color-secondary) text-white my-2 text-2xl border-white shadow-md scale-125 *:transition-[transform,colors] duration-300 sm:my-4
+  }
+}
+
+@media (min-width: 768px) {
+
+  .home-slider .swiper-button-prev,
+  .home-slider .swiper-button-next {
+    --swiper-navigation-size: 2rem;
+    --swiper-navigation-sides-offset: 2rem;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    --swiper-navigation-size: 2.5rem;
+    --swiper-navigation-sides-offset: 1.75rem;
+  }
+
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Arthur's Fried Chicken",
+  "short_name": "AFC",
+  "description": "Crispy fried chicken made fresh daily.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/logos/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/logos/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "/logos/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
