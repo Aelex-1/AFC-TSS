@@ -11,7 +11,7 @@ export const Route = createFileRoute('/menu')({
   head: () => ({
     meta: [
       ...seo({
-        title:  "AFC | Menu",
+        title: "AFC | Menu",
         description: "Explore the AFC menu featuring our signature fried chicken, value meals, sides, and other Sulit Sarap favorites.",
         link: "/menu"
       })
@@ -125,6 +125,12 @@ function RouteComponent() {
               See Locations
             </Link>
           </button>
+
+          <button className='button-secondary mt-4 shrink-0 font-semibold tracking-tight text-sm px-3 py-1.5 md:px-4 md:py-2'>
+            <a href="#pickup">
+              Pick-up Order Now 
+            </a>
+          </button>
         </div>
       </section>
 
@@ -137,6 +143,12 @@ function RouteComponent() {
               <ItemCard category={category} />
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id='pickup'>
+        <div>
+          place pickup order details here
         </div>
       </section>
     </main>
