@@ -15,5 +15,8 @@
   ], 
 
   "workers_dev": false,
-  "preview_urls": true
+  "preview_urls": true,
+
+  "previews": {}
 }
+
