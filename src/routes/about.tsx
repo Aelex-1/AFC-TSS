@@ -57,7 +57,7 @@ export interface HistoryTypes {
 
 export const HISTORYDATA: HistoryTypes[] = [
   {
-    historyYear: 2011,
+    historyYear: 2010,
     historyTitle: 'Humble Beginnings',
     historyDescription: 'AFC began its journey as a small food stall in Libungan, Cotabato. With a simple vision and a passion for serving delicious and affordable fried chicken, the team focused on developing and perfecting the recipe that would eventually become the foundation of the AFC brand.',
     historyImage: './images/about/history-2011.webp'
