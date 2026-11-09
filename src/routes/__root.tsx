@@ -15,21 +15,6 @@ const OG_IMAGE = '/seoimage.jpg'
 
 export const Route = createRootRoute({
   head: () => ({
-    scripts: [
-      {
-        src: "https://www.googletagmanager.com/gtm.js?id=GTM-57W93327",
-        async: true,
-      },
-      {
-        children: `
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-          });
-        `
-      }
-    ],
     meta: [
       { charSet: 'utf-8', },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -67,6 +52,17 @@ export const Route = createRootRoute({
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/logos/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
       { rel: 'icon', href: '/logos/favicon.ico' },
+    ],
+    scripts: [
+      {
+        children: `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-57W93327');
+        `,
+      },
     ],
   }),
   notFoundComponent: () => <NotFound />,
