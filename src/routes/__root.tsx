@@ -15,6 +15,18 @@ const OG_IMAGE = '/seoimage.jpg'
 
 export const Route = createRootRoute({
   head: () => ({
+    scripts: [
+      {
+        src: "https://https://www.googletagmanager.com/gtm.js?id=GTM-57W93327",
+        async: true,
+      },
+      {
+        children: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());`
+      }
+    ],
     meta: [
       { charSet: 'utf-8', },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
