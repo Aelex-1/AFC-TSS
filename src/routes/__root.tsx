@@ -17,15 +17,17 @@ export const Route = createRootRoute({
   head: () => ({
     scripts: [
       {
-        src: "https://https://www.googletagmanager.com/gtm.js?id=GTM-57W93327",
+        src: "https://www.googletagmanager.com/gtm.js?id=GTM-57W93327",
         async: true,
       },
       {
         children: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-57W93327');`
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+          });
+        `
       }
     ],
     meta: [
