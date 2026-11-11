@@ -9,7 +9,7 @@ import 'swiper/css/pagination'
 import { seo } from '#/utils/seo';
 
 import { HOMESLIDEIMAGES } from '#/content/landingContent'
-import { BLOGSDATA} from '#/content/blogContent';
+import { BLOGSDATA } from '#/content/blogContent';
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -47,7 +47,7 @@ function Home() {
           className='home-slider w-screen  text-center text-black'
         >
 
-          {HOMESLIDEIMAGES.map((slide) => (
+          {HOMESLIDEIMAGES.map((slide, index) => (
             <SwiperSlide key={slide.alt} className=''>
               <picture>
                 <source
@@ -59,10 +59,11 @@ function Home() {
                 <img
                   src={slide.imageWide}
                   alt={slide.alt}
-                  loading='eager'
-                  fetchPriority='high'
                   width={1700}
                   height={425}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
+                  decoding={index === 0 ? 'sync' : 'async'}
                   className='w-full object-cover'
                 />
               </picture>
@@ -235,14 +236,22 @@ function Home() {
                   className='group'
                 >
                   <div className='text-start min-h-full md:min-h-100 bg-white rounded-lg shadow-md '>
-                    <img
-                      src={blogs.image}
-                      alt={blogs.alt}
-                      width={370}
-                      height={240}
-                      loading='lazy'
-                      className='w-full h-60 object-cover rounded-t-lg sm:h-60'
-                    />
+                    <picture>
+                      <source
+                        media='(max-width: 767px)'
+                        srcSet={blogs.imgMobile}
+                        width={665}
+                        height={443}
+                      />
+                      <img
+                        src={blogs.image}
+                        alt={blogs.alt}
+                        width={1080}
+                        height={720}
+                        loading='lazy'
+                        className='w-full h-60 object-cover rounded-t-lg sm:h-60'
+                      />
+                    </picture>
                     <h3 className="text-lg font-bold pt-4 px-5">{blogs.category}</h3>
                     <h2 className="text-2xl font-bold py-1.5 px-5 line-clamp-2 group-hover:text-(--color-primary)">{blogs.title}</h2>
                     <p className="text-md pb-3 px-5">{blogs.date}</p>

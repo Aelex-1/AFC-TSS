@@ -20,7 +20,8 @@ export const Route = createRootRoute({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: TITLE },
       { name: 'description', content: DESCRIPTION },
-      { name: 'keywords', content: 'fried chicken, fast food, chicken restaurant, AFC, crispy chicken, grilled chicken, chicken sisig, unli rice, fried chicken franchise, philippine fried chicken', },
+      { name: 'keywords', 
+        content: 'fried chicken, fast food, chicken restaurant, AFC, crispy chicken, grilled chicken, chicken sisig, unli rice, fried chicken franchise, philippine fried chicken, afc midsayap, afc menu with price, afc chicken, afc restaurant near me, afc fried chicken' },
       { name: 'theme-color', content: '#ffffff' },
 
       { name: 'og:type', content: 'website' },

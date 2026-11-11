@@ -9,6 +9,7 @@ export type BlogsType = {
   title: string;
   date: string;
   image: string;
+  imgMobile: string;
   alt: string;
   content: ReactNode[];
   summary?: string[];
@@ -23,6 +24,7 @@ export const BLOGSDATA: BlogsType[] = [
     title: 'AFC Opens Newest Branch in Pigcawayan, Cotabato',
     date: 'July 22, 2026',
     image: '/images/blogs/blog-pigcawayan-opening.webp',
+    imgMobile: '/images/blogs/mb-blog-pigcawayan-opening.webp',
     alt: 'Pigcawayan Opening',
     content: [
       "A new chapter in the AFC journey began with the opening of AFC Pigcawayan, bringing the brand’s signature Sulit Sarap experience to the community of Pigcawayan, North Cotabato. Located along Datu Piang Street in Poblacion 3, right beside the Municipal Plaza, the newest AFC branch welcomed customers eager to enjoy their favorite fried chicken and other well-loved menu items.",
@@ -42,6 +44,7 @@ export const BLOGSDATA: BlogsType[] = [
     title: 'AFC Year 2025 Highlights',
     date: 'December 14, 2025',
     image: '/images/blogs/blog-2025-highlights.webp',
+    imgMobile: '/images/blogs/mb-blog-2025-highlights.webp',
     alt: 'Year 2025 Highlights',
     content: [
       "The year 2025 marked another meaningful chapter in the journey of Arthur’s Fried Chicken. More than just milestones and dates, it was a year defined by people, growth, and a shared commitment to delivering Sulit Sarap experiences across every AFC branch. From celebrating long-serving team members to expanding our footprint and investing in leadership development, each moment reflected AFC’s dedication to building a stronger organization from the inside out.",
@@ -60,6 +63,7 @@ export const BLOGSDATA: BlogsType[] = [
     title: "Building Stronger Leaders, Stronger Stores: AFC’s Ongoing Development Journey",
     date: 'December 9, 2025',
     image: '/images/blogs/blog-building-stronger.webp',
+    imgMobile: '/images/blogs/mb-blog-building-stronger.webp',
     alt: 'Building Leaders',
     content: [
       "Arthur’s Fried Chicken (AFC) continues to rise not only through the growing number of branches across the country, but through the ongoing transformation of the people who make each store come alive. Our recent Development Journeys, conducted for key personnel in AFC Cotabato, AFC Midsayap, and other branches, reflect a deeper commitment within the brand: to cultivate leadership, encourage continuous learning, and strengthen the systems that support long-term business success.",
@@ -76,6 +80,7 @@ export const BLOGSDATA: BlogsType[] = [
     title: "How to become a successful franchise owner in 7-steps",
     date: 'January 7, 2026',
     image: '/images/blogs/blog-successful-franchise.webp',
+    imgMobile: '/images/blogs/mb-blog-successful-franchise.webp',
     alt: 'Owning a Franchise in 7 steps',
     content: ['Becoming a successful franchise owner isn’t just about signing a contract — it’s about choosing the right brand, learning the system, and growing into a capable leader who can run a thriving business. In the case of Arthur’s Fried Chicken (AFC), franchise success comes from combining proven systems with local insight, strong people management, and consistent quality that keeps customers coming back. The steps below outline what aspiring franchisees need to understand and master in order to build a future-proof, profitable AFC branch in their community.',
       "1. Choose the right franchise fit",
