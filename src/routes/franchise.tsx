@@ -142,7 +142,7 @@ const storePackageData = [
     imgAlt: "Deluxe Package Store Type",
     packageTitle: "Deluxe Package",
     lotArea: "300 - 450 Square Meters",
-    investmentCapital: "Minimum of ₱8M. Final cost varies.",
+    investmentCapital: "Minimum of ₱12M. Final cost varies.",
   },
   {
     imgSrc: "./images/package-lite.webp",
